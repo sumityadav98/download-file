@@ -9,6 +9,7 @@ btn.addEventListener('click',function(){
     grow++
     percent.innerHTML=grow+"%"
     growth.style.width=grow+"%"
+    btn.style.opacity=0.8
   },100)
 
 setInterval(function(){
