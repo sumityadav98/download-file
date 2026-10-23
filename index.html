@@ -4,24 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Downly - Download Manager</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Tailwind Test</title>
 </head>
-<body class="h-screen">
+<body class="min-h-screen bg-[#090e19] text-white">
+    <div class="mx-auto max-w-5xl px-5">
+        <header class="flex h-20 items-center justify-between border-b border-white/10">
+            <a href="#" class="text-2xl font-extrabold tracking-tight">
+                <span class="text-lime-400">↓</span> downly
+            </a>
+            <span class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="h-2 w-2 rounded-full bg-lime-400"></span>
+                Download manager
+            </span>
+        </header>
 
-    <div class="bg-white px-5 py-7 rounded">
-        <div id="progress" class="w-80 bg-gray-300 rounded-full h-5">
-            <div id="growth" class="bg-green-600 h-full rounded-full w-0"></div>
-        </div>
-        <div class=" flex justify-end">
-<h1 class="percent">0%</h1>
-        </div>
-        <div class="  mt-4 flex justify-between">
-            <h1>song.mp3</h1>
-            <button class="active:scale-95 bg-green-600 text-xs px-5 py-2 text-white rounded font-medium active-scale">download files</button>
-        </div>
+        <main class="mx-auto max-w-3xl">
+            <section class="py-14 text-center">
+                <p class="text-xs font-bold tracking-[3px] text-lime-400">YOUR PERSONAL DOWNLOAD HUB</p>
+                <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-6xl">
+                    Downloads,<br>
+                    <span class="text-lime-400">simplified.</span>
+                </h1>
+                <p class="mx-auto mt-5 max-w-md text-sm leading-7 text-slate-400">
+                    Download files, track progress, and keep everything organized.
+                </p>
+            </section>
+
+            <section class="rounded-2xl border border-slate-700/70 bg-[#111a2a] p-5 shadow-2xl sm:p-7">
+                <div class="mb-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] font-bold tracking-[2px] text-lime-400">NEW DOWNLOAD</p>
+                        <h2 class="mt-2 text-xl font-bold">Start a download</h2>
+                    </div>
+                    <div class="grid h-11 w-11 place-items-center rounded-xl bg-lime-400/10 text-2xl text-lime-400">↓</div>
+                </div>
+
+                <form id="downloadForm">
+                    <label for="fileUrl" class="mb-2 block text-xs font-semibold text-slate-300">File URL</label>
+                    <input id="fileUrl" type="url" placeholder="https://example.com/file.pdf"
+                        class="h-12 w-full rounded-lg border border-slate-700 bg-[#090f1c] px-4 text-sm outline-none transition focus:border-lime-400">
+
+                    <label for="fileName" class="mb-2 mt-5 block text-xs font-semibold text-slate-300">Save as (optional)</label>
+                    <input id="fileName" type="text" placeholder="my-file.pdf"
+                        class="h-12 w-full rounded-lg border border-slate-700 bg-[#090f1c] px-4 text-sm outline-none transition focus:border-lime-400">
+
+                    <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+                        <button id="startBtn" type="submit"
+                            class="min-h-12 flex-1 rounded-lg bg-lime-400 px-5 text-sm font-bold text-slate-950 transition hover:bg-lime-300 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-50">
+                            ↓ &nbsp; Download file
+                        </button>
+                        <button id="demoBtn" type="button"
+                            class="min-h-12 rounded-lg border border-slate-600 px-5 text-sm font-semibold transition hover:bg-white/5 active:scale-[.98]">
+                            Try demo file
+                        </button>
+                    </div>
+                </form>
+
+                <p id="message" role="status" aria-live="polite" class="mt-4 min-h-4 text-xs leading-5 text-slate-400">
+                    Paste a direct file link to get started.
+                </p>
+            </section>
+
+            <section class="mt-6 rounded-2xl border border-slate-700/70 bg-[#111a2a] p-5 sm:p-7">
+                <div class="mb-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] font-bold tracking-[2px] text-lime-400">YOUR ACTIVITY</p>
+                        <h2 class="mt-2 text-xl font-bold">Downloads</h2>
+                    </div>
+                    <span id="fileCount" class="rounded-full bg-white/5 px-3 py-2 text-xs text-slate-400">0 files</span>
+                </div>
+
+                <div id="downloadList" class="grid gap-3">
+                    <div id="emptyState" class="py-8 text-center">
+                        <div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-lime-400/10 text-2xl text-lime-400">↓</div>
+                        <h3 class="mt-4 text-sm font-semibold">Nothing here yet</h3>
+                        <p class="mt-2 text-xs text-slate-400">Your downloads will appear here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="my-9 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-[10px] tracking-wider text-slate-500 sm:flex-row">
+                <span>DOWNLY © 2026</span>
+                <span>BUILT WITH TAILWIND CSS & JAVASCRIPT</span>
+            </footer>
+        </main>
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
