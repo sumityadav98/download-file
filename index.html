@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Tailwind Test</title>
+</head>
+<body class="h-screen">
+
+    <div class="bg-white px-5 py-7 rounded">
+        <div id="progress" class="w-80 bg-gray-300 rounded-full h-5">
+            <div id="growth" class="bg-green-600 h-full rounded-full w-0"></div>
+        </div>
+        <div class=" flex justify-end">
+<h1 class="percent">0%</h1>
+        </div>
+        <div class="  mt-4 flex justify-between">
+            <h1>song.mp3</h1>
+            <button class="active:scale-95 bg-green-600 text-xs px-5 py-2 text-white rounded font-medium active-scale">download files</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
